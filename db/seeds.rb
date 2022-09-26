@@ -20,7 +20,7 @@ contacts = []
 		phone: Faker::PhoneNumber.cell_phone,
     dob: Faker::Date.birthday(min_age: 18, max_age: 65)
   }
-  	.push(new_contact)
+  	contacts.push(new_contact)
 end
 
 # save to DB

@@ -1,16 +1,37 @@
-   <%= form_for @contact do |f| %>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-9">
-                    <div class="form-group row">
-                     <div class="form-group">
+<%= form_for @contact do |f| %>          
+    <div class="panel-body">
+      
+      <% if @contact.errors.any? %>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-danger">
+              <h3>Please correct this following errors:</h3>
+
+              <ul>
+                <% @contact.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+
+      
+      <div class="form-horizontal">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="form-group">
+           
               <%= f.label :name, class: "control-label col-md-3" %>
               <div class="col-md-8">
                 <%= f.text_field :name, class: "form-control" %>
               </div>
             </div>
-
-            <%= f.label :dob, class: "control-label col-md-3" %>
+<div class="form-group">
+          <%= f.label :dob, class: "control-label col-md-3" %>
               <div class="col-md-8">
                 <%= f.text_field :dob, class: "form-control" %>
               </div>
