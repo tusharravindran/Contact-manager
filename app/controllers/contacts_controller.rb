@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+before_action :find_contact, only: [:edit, :update, :destroy]
   def index
     @contacts = Contact.all
   end
@@ -15,6 +16,30 @@ class ContactsController < ApplicationController
   end
   end
 
+  def edit 
+  end
+
+  def update 
+    
+    if @contact.update(contact_params)
+      flash[:success] = "Successfully Update contact"
+      redirect_to contacts_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+   
+    if @contact.destroy
+      flash[:success] = "Successfully Deleted contact"
+      redirect_to contacts_path
+    end
+  end
+
+  def find_contact
+    @contact = Contact.find(params[:id])
+  end
   private
 
   def contact_params
