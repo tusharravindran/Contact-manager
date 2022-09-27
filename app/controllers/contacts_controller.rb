@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
 before_action :find_contact, only: [:edit, :update, :destroy]
   def index
-    @contacts = Contact.paginate(page: params[:page], per_page: 6)
+    @contacts = Contact.paginate(page: params[:page], per_page: 8)
   end
   def new
    @contact = Contact.new
