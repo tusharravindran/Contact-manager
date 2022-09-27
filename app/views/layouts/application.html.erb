@@ -12,14 +12,14 @@
      <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="/contacts/new" class="btn btn-outline-primary">Add New</a></li>
-          </ul>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02"> </div>
         <a class="navbar-brand text-uppercase" href="/contacts">
            MY CONTACTS
         </a>
+         <div class="container-fluid pull-right"><%= button_to 'Logout', logout_path, method: :delete %></div>
+        <div class="container-fluid pull-right"><a href="/contacts/new" class="btn btn-danger">Add New</a></div>
+        
+       
       </div>
       
     </nav>
@@ -27,14 +27,7 @@
     <main class="pt-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
-            <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active">All Contact <span class="badge badge-warning badge-pill">14</span></a>
-              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Family <span class="badge badge-pill badge-warning">4</span></a>
-              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Friends <span class="badge badge-pill badge-warning">3</span></a>
-              <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Other <span class="badge badge-pill badge-warning">3</span></a>
-            </div>
-          </div><!-- /.col-md-3 -->
+          
           <div class="col-md-9">
           
           <% flash.each do |type, message| %>
@@ -50,3 +43,4 @@
       </div>
   </body>
 </html>
+
