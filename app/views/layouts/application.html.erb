@@ -16,11 +16,14 @@
             <a class="navbar-brand text-uppercase" href="/contacts">
               CONTACTS
             </a>
-            <div class="container-fluid pull-right"><%= button_to 'Logout', logout_path, method: :delete %></div>
-            <div class="container-fluid pull-right"><a href="/contacts/new" class="btn btn-primary">Add New</a></div>
-            
-          
-          </div>
+            <% if Current.user %>
+           <div class="container-fluid pull-right"><%= button_to 'Logout', logout_path, method: :delete %></div>
+           <div class="container-fluid pull-right"><a href="/contacts/new" class="btn btn-danger">Add New</a></div>
+        <% else %>
+              <div class="container-fluid pull-right"><%= button_to 'Sign Up', sign_up_path %></div>
+             <div class="container-fluid pull-right"><%= button_to 'Login', sign_in_path %><div>
+        <% end %>
+      </div>
           
         </nav>
         <!-- content -->
