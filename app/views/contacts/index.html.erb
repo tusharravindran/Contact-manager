@@ -1,8 +1,6 @@
 <div class="panel panel-default">
     <table class="table">
-
     <% @contacts.each do |contact| %>
-
       <tr>
         <td class="middle">
           <div class="media">
@@ -27,16 +25,13 @@
             <% end %>
             <%= link_to contact_path(contact), :method => :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure ?" } do %>
               <i class="glyphicon glyphicon-remove"></i>
-            <% end %>            
+            <% end %>
           </div>
         </td>
       </tr>
-
     <% end %>
-      
-    </table>            
+    </table>
   </div>
-
   <div class="text-center">
 <%= will_paginate %>
-  </div>
+</div>

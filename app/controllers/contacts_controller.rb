@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+
 before_action :require_user_logged_in!
 before_action :find_contact, only: [:edit, :update, :destroy]
   def index
@@ -41,9 +42,11 @@ before_action :find_contact, only: [:edit, :update, :destroy]
   def find_contact
     @contact = Contact.find(params[:id])
   end
+
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :company, :address ,:phone ,:dob) 
+    params.require(:contact).permit(:name, :email, :company, :address ,:phone ,:dob, :images) 
   end
+  
 end
