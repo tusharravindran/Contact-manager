@@ -1,13 +1,20 @@
 <div class="panel panel-default">
     <table class="table">
+      <div class="text-center">
+<%= will_paginate %>
+</div>
     <% @contacts.each do |contact| %>
       <tr>
         <td class="middle">
           <div class="media">
             <div class="media-left">
-              <a href="#">
-                <img class="media-object" src="http://placehold.it/100x100" alt="...">
-              </a>
+              <div class="fileinput-new thumbnail" style="width: 150px; height: 150px;">
+                 <% if contact.image.attached? %>
+                      <%= link_to image_tag(contact.image, style:"height:100%"), contacts_path%>
+                 <% else %>
+                    <img class="image" src="https://cdn-icons-png.flaticon.com/512/149/149071.png">
+                 <% end %>
+              </div>
             </div>
             <div class="media-body">
               <h4 class="media-heading"><%= contact.name %></h4>

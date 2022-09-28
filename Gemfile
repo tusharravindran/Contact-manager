@@ -29,7 +29,7 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'bootstrap-will_paginate', '~> 1.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-
+gem 'pg'
 gem 'faker', '~> 2.23'
 
 group :development, :test do
