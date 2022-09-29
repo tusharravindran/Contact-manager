@@ -14,14 +14,16 @@
           <div class="container">
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02"> </div>
             <a class="navbar-brand text-uppercase" href="/contacts">
-              CONTACTS
+              MY CONTACTS 📞
             </a>
             <% if Current.user %>
            <div class="container-fluid pull-right"><%= button_to 'Logout', logout_path, method: :delete %></div>
            <div class="container-fluid pull-right"><a href="/contacts/new" class="btn btn-danger">Add New</a></div>
         <% else %>
-              <div class="container-fluid pull-right"><%= button_to 'Sign Up', sign_up_path %></div>
-             <div class="container-fluid pull-right"><%= button_to 'Login', sign_in_path %><div>
+        <b>
+        <div class="container-fluid pull-right"><%= button_to 'Login', sign_in_path %>
+        <%= link_to "<button>Signup</button>".html_safe, sign_up_path, :class=>"inbox-sf-add-btn tip" %><div>
+        </b>
         <% end %>
       </div>
           

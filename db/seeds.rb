@@ -10,9 +10,8 @@ Contact.destroy_all
 contacts = []
 
 # generate 20 fake data
-20.times do |i|
+20.times do
 	new_contact = {
-		id: i,
 		name: Faker::Name.name,
 		email: Faker::Internet.email,
 		company: Faker::Company.name,

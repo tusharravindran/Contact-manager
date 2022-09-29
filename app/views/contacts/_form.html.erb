@@ -14,6 +14,8 @@
           </div>
         </div>
       <% end %>
+
+
       <div class="form-horizontal">
         <div class="row">
           <div class="col-md-8">
@@ -23,30 +25,38 @@
                 <%= f.text_field :name, class: "form-control" %>
               </div>
             </div>
-<div class="form-group">
+
+
+        <div class="form-group">
           <%= f.label :dob, class: "control-label col-md-3" %>
               <div class="col-md-8">
-                <%= f.text_field :dob, class: "form-control" %>
+                <%= f.date_field :dob, class: "form-control" %>
               </div>
             </div>
+
+
             <div class="form-group">
               <%= f.label :company, class: "control-label col-md-3" %>
               <div class="col-md-8">
                 <%= f.text_field :company, class: "form-control" %>
               </div>
             </div>
+
             <div class="form-group">
               <%= f.label :email, class: "control-label col-md-3" %>
               <div class="col-md-8">
                 <%= f.text_field :email, class: "form-control" %>
               </div>
             </div>
+            
+            
             <div class="form-group">
               <%= f.label :phone, class: "control-label col-md-3" %>
               <div class="col-md-8">
                 <%= f.text_field :phone, class: "form-control" %>
               </div>
             </div>
+           
             <div class="form-group">
               <%= f.label :address, class: "control-label col-md-3" %>
               <div class="col-md-8">
